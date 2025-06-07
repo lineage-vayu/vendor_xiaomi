@@ -105,7 +105,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/sdr_config.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/sdr_config.cfg \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config \
-    vendor/xiaomi/sm8150-common/proprietary/vendor/etc/seccomp_policy/atfwd@2.0.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/atfwd@2.0.policy \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.base.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.base.policy \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/seccomp_policy/codec2.vendor.ext.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/codec2.vendor.ext.policy \
     vendor/xiaomi/sm8150-common/proprietary/vendor/etc/seccomp_policy/imsrtp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/imsrtp.policy \
@@ -290,7 +289,6 @@ PRODUCT_PACKAGES += \
     libdsi_netctrl \
     libdsutils \
     libgdtap \
-    libgps.utils \
     libhdr_tm \
     libhexagon_nn_stub \
     libhta \
@@ -304,9 +302,7 @@ PRODUCT_PACKAGES += \
     libkeymasterutils \
     liblbs_core \
     libloc_api_v02 \
-    libloc_core \
     libloc_socket \
-    liblocation_api \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
@@ -427,7 +423,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qseecom@1.0 \
     vendor.qti.hardware.qteeconnector@1.0 \
     vendor.qti.hardware.radio.am@1.0 \
-    vendor.qti.hardware.radio.atcmdfwd@1.0 \
     vendor.qti.hardware.radio.ims@1.0 \
     vendor.qti.hardware.radio.ims@1.1 \
     vendor.qti.hardware.radio.ims@1.2 \
@@ -528,7 +523,6 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3-service-qti.xml \
     manifest_android.hardware.drm@1.3-service.widevine.xml \
     manifest_vendor.xiaomi.hardware.mlipay.xml \
-    ATFWD-daemon \
     adpl \
     adsprpcd \
     cdsprpcd \
@@ -618,20 +612,8 @@ PRODUCT_PACKAGES += \
 endif
 
 ifneq ($(TARGET_IS_TABLET),true)
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/sm8150-common/proprietary/vendor/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
-    vendor/xiaomi/sm8150-common/proprietary/vendor/etc/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
-    vendor/xiaomi/sm8150-common/proprietary/vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gnss@2.1-service-qti.rc
 
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-impl-qti \
     vendor.qti.gnss@4.0-impl \
-    libbatching \
-    libgeofencing \
-    libgnss \
-    libgnsspps \
-    vendor.qti.gnss@4.0-service \
-    android.hardware.gnss@2.1-service-qti.xml \
-    vendor.qti.gnss@4.0-service.xml \
-    android.hardware.gnss@2.1-service-qti
+    vendor.qti.gnss@4.0-service
 endif
