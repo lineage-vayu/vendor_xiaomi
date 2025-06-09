@@ -143,8 +143,6 @@ PRODUCT_PACKAGES += \
     libC2D2 \
     libCB \
     libOpenCL \
-    libVkLayer_q3dtools \
-    libadreno_app_profiles \
     libadreno_utils \
     libadsp_default_listener \
     libadsprpc \
@@ -155,7 +153,6 @@ PRODUCT_PACKAGES += \
     libdiag \
     libfastcvdsp_stub \
     libfastcvopt \
-    libgpudataproducer \
     libgsl \
     libllvm-glnext \
     libllvm-qcom \
@@ -268,7 +265,6 @@ PRODUCT_PACKAGES += \
     libQTEEConnector_vendor \
     libSecureUILib \
     libStDrvInt \
-    libaoa \
     libbtnv \
     libcacertclient \
     libcdfw \
@@ -289,6 +285,8 @@ PRODUCT_PACKAGES += \
     libdsi_netctrl \
     libdsutils \
     libgdtap \
+    libgnss \
+    libgps.utils \
     libhdr_tm \
     libhexagon_nn_stub \
     libhta \
@@ -296,13 +294,14 @@ PRODUCT_PACKAGES += \
     libidl \
     libizat_client_api \
     libizat_core \
-    libjnihelper \
     libkeymasterdeviceutils \
     libkeymasterprovision \
     libkeymasterutils \
     liblbs_core \
     libloc_api_v02 \
+    libloc_core \
     libloc_socket \
+    liblocation_api \
     liblocationservice \
     liblocationservice_glue \
     liblowi_client \
@@ -332,7 +331,6 @@ PRODUCT_PACKAGES += \
     libqcrilFramework \
     libqcrildatactl \
     libqdi \
-    libqdma_file_agent \
     libqdp \
     libqisl \
     libqmi \
@@ -364,7 +362,6 @@ PRODUCT_PACKAGES += \
     libsecureui \
     libsecureui_svcsock \
     libsettings \
-    libslimclient \
     libspcom \
     libspl \
     libssc_default_listener \
@@ -556,7 +553,6 @@ PRODUCT_PACKAGES += \
     lowi-server \
     mdm_helper \
     mi_thermald \
-    mlid \
     mlipayd@1.1 \
     msm_irqbalance \
     netmgrd \
@@ -582,8 +578,6 @@ PRODUCT_PACKAGES += \
     vppservice \
     wifidisplayhalservice \
     xtra-daemon \
-    xtwifi-client \
-    xtwifi-inet-agent \
     dpmd \
     wfdservice \
     wfdservice64
