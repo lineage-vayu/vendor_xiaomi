@@ -37,6 +37,7 @@ cc_prebuilt_library_shared {
                 "android.hardware.bluetooth.audio@2.0",
                 "libbluetooth_audio_session",
                 "libbluetooth_audio_session_qti",
+                "libbluetooth_audio_session_qti_2_1",
                 "libc++",
                 "libc",
                 "libm",
@@ -57,6 +58,7 @@ cc_prebuilt_library_shared {
                 "android.hardware.bluetooth.audio@2.0",
                 "libbluetooth_audio_session",
                 "libbluetooth_audio_session_qti",
+                "libbluetooth_audio_session_qti_2_1",
                 "libc++",
                 "libc",
                 "libm",
@@ -845,6 +847,61 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libbluetooth_audio_session_qti_2_1",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libbluetooth_audio_session_qti_2_1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.bluetooth_audio@2.1",
+                "vendor.qti.hardware.bluetooth_audio@2.0",
+                "libaudioutils",
+                "libbase",
+                "libcutils",
+                "libfmq",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbluetooth_audio_session_qti_2_1.so",
+            ],
+            shared_libs: [
+                "vendor.qti.hardware.bluetooth_audio@2.1",
+                "vendor.qti.hardware.bluetooth_audio@2.0",
+                "libaudioutils",
+                "libbase",
+                "libcutils",
+                "libfmq",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libc2d30_bltlib",
     owner: "xiaomi",
     strip: {
@@ -1065,7 +1122,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libion",
-                "libOpenCL",
                 "libfastcvdsp_stub",
                 "libcdsprpc",
                 "libc++",
@@ -1081,7 +1137,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libion",
-                "libOpenCL",
                 "libfastcvdsp_stub",
                 "libcdsprpc",
                 "libc++",
@@ -1839,7 +1894,7 @@ cc_prebuilt_library_shared {
                 "libion",
                 "libvpphvx",
                 "libadsprpc",
-                "libvpphcp",
+                "libC2D2",
                 "libc++",
                 "libc",
                 "libm",
@@ -1860,7 +1915,7 @@ cc_prebuilt_library_shared {
                 "libion",
                 "libvpphvx",
                 "libadsprpc",
-                "libvpphcp",
+                "libC2D2",
                 "libc++",
                 "libc",
                 "libm",
@@ -2113,6 +2168,42 @@ cc_prebuilt_library_shared {
                 "libaudioroute",
                 "libexpat",
                 "libhardware_legacy",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "32",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.hardware.bluetooth_audio@2.1-impl",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so",
+            ],
+            shared_libs: [
+                "android.hardware.audio.common@5.0",
+                "libbluetooth_audio_session_qti_2_1",
+                "libbase",
+                "libcutils",
+                "libfmq",
+                "libhidlbase",
+                "libhidltransport",
+                "liblog",
+                "libutils",
+                "vendor.qti.hardware.bluetooth_audio@2.1",
+                "vendor.qti.hardware.bluetooth_audio@2.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -3800,6 +3891,7 @@ cc_prebuilt_library_shared {
                 "libqmi_cci",
                 "libbtnv",
                 "android.hardware.bluetooth@1.0",
+                "libsoc_helper",
                 "libc++",
                 "libc",
                 "libm",
@@ -5208,7 +5300,6 @@ cc_prebuilt_library_shared {
                 "libtinyxml2",
                 "libhidlbase",
                 "android.frameworks.sensorservice@1.0",
-                "libtinyxml",
                 "libc++",
                 "libc",
                 "libm",
@@ -5492,31 +5583,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libhta",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libhta.so",
-            ],
-            shared_libs: [
-                "libcdsprpc",
-                "liblog",
-                "libm",
-                "libdl",
-                "libc",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libhta_hexagon_runtime",
     owner: "xiaomi",
     strip: {
@@ -5530,7 +5596,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "liblog",
                 "libcdsprpc",
-                "libc++",
                 "libc",
                 "libm",
                 "libdl",
@@ -7663,6 +7728,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libsoc_helper",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsoc_helper.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libspcom",
     owner: "xiaomi",
     strip: {
@@ -8198,6 +8288,7 @@ cc_prebuilt_library_shared {
             ],
             shared_libs: [
                 "liblog",
+                "libbase",
                 "libprotobuf-cpp-full-3.9.1-vendorcompat",
                 "libc++",
                 "libc",
@@ -12681,6 +12772,8 @@ cc_prebuilt_binary {
                 "libutils",
                 "libhidlbase",
                 "android.hardware.bluetooth@1.0",
+                "vendor.qti.hardware.fm@1.0_vendor",
+                "com.dsi.ant@1.0",
                 "vendor.qti.hardware.bluetooth_sar@1.0",
                 "vendor.qti.hardware.bluetooth_sar@1.1",
                 "vendor.qti.hardware.btconfigstore@1.0",
@@ -12820,6 +12913,7 @@ cc_prebuilt_binary {
                 "libcutils",
                 "libfmq",
                 "libui",
+                "libcrypto",
                 "android.hardware.neuralnetworks@1.0",
                 "android.hardware.neuralnetworks@1.1",
                 "android.hardware.neuralnetworks@1.2",
@@ -14422,9 +14516,9 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "vendor.qti.hardware.fm@1.0_vendor",
                 "android.hardware.bluetooth@1.0-impl-qti",
+                "libqmi_cci",
                 "libqmi",
                 "libqmiservices",
-                "libqmi_cci",
                 "libc++",
                 "libc",
                 "libm",

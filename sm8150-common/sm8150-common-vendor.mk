@@ -147,6 +147,7 @@ PRODUCT_PACKAGES += \
     libadsp_default_listener \
     libadsprpc \
     libbluetooth_audio_session_qti \
+    libbluetooth_audio_session_qti_2_1 \
     libc2d30_bltlib \
     libcdsp_default_listener \
     libcdsprpc \
@@ -177,6 +178,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.vpp@1.2 \
     vendor.qti.hardware.vpp@1.3 \
     sound_trigger.primary.msmnile \
+    vendor.qti.hardware.bluetooth_audio@2.1-impl \
     libFileMux_proprietary \
     libacdb-fts \
     libacdbloader \
@@ -289,7 +291,6 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libhdr_tm \
     libhexagon_nn_stub \
-    libhta \
     libhta_hexagon_runtime \
     libidl \
     libizat_client_api \
@@ -362,6 +363,7 @@ PRODUCT_PACKAGES += \
     libsecureui \
     libsecureui_svcsock \
     libsettings \
+    libsoc_helper \
     libspcom \
     libspl \
     libssc_default_listener \
