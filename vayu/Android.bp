@@ -5,6 +5,7 @@
 soong_namespace {
     imports: [
         "hardware/qcom-caf/sm8150",
+        "device/xiaomi/vayu",
         "hardware/xiaomi",
         "hardware/qcom-caf/common/libqti-perfd-client",
         "vendor/qcom/opensource/display",
@@ -29,7 +30,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libtinyalsa",
                 "libtinycompress",
-                "libaudioroute",
+                "libaudioroute-v34",
                 "libaudioutils",
                 "libexpat",
                 "libhidlbase",
@@ -241,7 +242,7 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libtinyalsa",
-                "libaudioroute",
+                "libaudioroute-v34",
                 "libexpat",
                 "libc++",
                 "libc",
